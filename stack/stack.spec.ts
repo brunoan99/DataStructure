@@ -18,4 +18,10 @@ describe('Stack', () => {
     const returned = sut.pop()
     expect(returned).toBe(undefined)
   })
+
+  test('Should method size return zero if no value are provided to Stack', () => {    
+    const sut = new Stack()
+    const returned = sut.size()
+    expect(returned).toEqual(0)
+  })
 })
