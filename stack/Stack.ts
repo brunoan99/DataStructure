@@ -25,6 +25,6 @@ export class Stack<V> implements IStack<V> {
   }
 
   storage (): V[] {
-    throw new Error()
+    return this.stack
   }
 }
