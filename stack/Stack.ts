@@ -2,7 +2,7 @@ import { IStack } from './IStack'
 
 
 export class Stack<V> implements IStack<V> {
-  stack: V[]
+  private stack: V[]
 
   constructor () {
     this.stack = []
@@ -21,7 +21,7 @@ export class Stack<V> implements IStack<V> {
   }
 
   size (): number {
-    throw new Error()
+    return this.stack.length
   }
 
   storage (): V[] {
