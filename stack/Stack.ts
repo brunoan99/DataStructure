@@ -1,6 +1,5 @@
 import { IStack } from './IStack'
 
-
 export class Stack<V> implements IStack<V> {
   private stack: V[]
 
@@ -8,7 +7,7 @@ export class Stack<V> implements IStack<V> {
     this.stack = []
   }
 
-  push (value: V): undefined {
+  push (value: V): void {
     return
   }
 
