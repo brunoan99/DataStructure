@@ -22,6 +22,12 @@ describe('Stack', () => {
   test('Should method size return zero if no value are provided to Stack', () => {    
     const sut = new Stack()
     const returned = sut.size()
-    expect(returned).toEqual(0)
+    expect(returned).toBe(0)
+  })
+
+  test('Should method storeage return an empty list if no value are provided to Stack', () => {    
+    const sut = new Stack()
+    const returned = sut.storage()
+    expect(returned).toEqual([])
   })
 })
