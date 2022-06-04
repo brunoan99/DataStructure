@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/brunoan99/DataStructure/issues"
   },
-  "homepage": "https://github.com/brunoan99/DataStructure#readme"
+  "homepage": "https://github.com/brunoan99/DataStructure#readme",
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
 }
