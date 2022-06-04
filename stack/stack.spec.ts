@@ -12,4 +12,10 @@ describe('Stack', () => {
     const returned = sut.peek()
     expect(returned).toBe(undefined)
   })
+
+  test('Should method pop return undefined if no value are provided to Stack', () => {    
+    const sut = new Stack()
+    const returned = sut.pop()
+    expect(returned).toBe(undefined)
+  })
 })
