@@ -2,12 +2,18 @@ import { IStack } from './IStack'
 
 
 export class Stack<V> implements IStack<V> {
+  stack: V[]
+
+  constructor () {
+    this.stack = []
+  }
+
   push (value: V): undefined {
     return
   }
 
   peek (): V | undefined {
-    throw new Error()
+    return this.stack[this.stack.length]
   }
 
   pop (): V | undefined {
