@@ -17,7 +17,7 @@ export class Stack<V> implements IStack<V> {
   }
 
   pop (): V | undefined {
-    throw new Error()
+    return this.stack[this.stack.length]
   }
 
   size (): number {
