@@ -45,4 +45,11 @@ describe('Stack', () => {
     sut.push('any')
     expect(sut.pop()).toBe('any')
   })
+
+  test('Should method pop remove the last value provided in push method to the stack', () => {    
+    const sut = makeSut()
+    sut.push('any')
+    expect(sut.pop()).toBe('any')
+    expect(sut.peek()).toBe(undefined)
+  })
 })
