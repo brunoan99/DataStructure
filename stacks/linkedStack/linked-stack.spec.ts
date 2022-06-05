@@ -17,4 +17,9 @@ describe('Linked Stack', () => {
     const sut = makeSut()
     expect(sut.pop()).toBe(undefined)
   })
+
+  test('Should method size return zero if no value are provided to Stack', () => {    
+    const sut = makeSut()
+    expect(sut.size()).toBe(0)
+  })
 })
