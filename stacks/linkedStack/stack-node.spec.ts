@@ -18,4 +18,17 @@ describe('Stack Node', () => {
     expect(sut.next.value).toBe('other_value')
     expect(sut.next.next).toBe(null)
   })
+
+  test('Should StackNode be possible to overwrite a next StackNode', () => {
+    const overwriteStackNode = new StackNode('another_value', null)
+    const anotherStackNode = new StackNode('other_value', null)
+    const sut = new StackNode('any', anotherStackNode)
+    expect(sut.next).toEqual(anotherStackNode)
+    expect(sut.next.value).toBe('other_value')
+    expect(sut.next.next).toBe(null)
+    sut.next = overwriteStackNode
+    expect(sut.next).toEqual(overwriteStackNode)
+    expect(sut.next.value).toBe('another_value')
+    expect(sut.next.next).toBe(null)
+  })
 })
