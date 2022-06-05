@@ -34,4 +34,11 @@ describe('Stack', () => {
     const returned = sut.storage()
     expect(returned).toEqual([])
   })
+
+  test('Should method peek return the last value provided in method push', () => {    
+    const sut = makeSut()
+    sut.push('any')
+    const returned = sut.peek()
+    expect(returned).toBe('any')
+  })
 })
