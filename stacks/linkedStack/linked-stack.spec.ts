@@ -12,4 +12,9 @@ describe('Linked Stack', () => {
     const sut = makeSut()
     expect(sut.peek()).toBe(undefined)
   })
+
+  test('Should method pop return undefined if no value are provided to Stack', () => {    
+    const sut = makeSut()
+    expect(sut.pop()).toBe(undefined)
+  })
 })
