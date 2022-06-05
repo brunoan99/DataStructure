@@ -50,4 +50,10 @@ describe('Stack', () => {
     expect(sut.pop()).toBe('any')
     expect(sut.peek()).toBe(undefined)
   })
+
+  test('Should method size return a number different of zero when some value is provided in push method', () => {    
+    const sut = makeSut()
+    sut.push('any')
+    expect(sut.size()).not.toBe(0)
+  })
 })
