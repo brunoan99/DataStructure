@@ -8,11 +8,11 @@ export class Stack<V> implements IStack<V> {
   }
 
   push (value: V): void {
-    return
+    this.stack.push(value)
   }
 
   peek (): V | undefined {
-    return this.stack[this.stack.length]
+    return this.stack[this.stack.length - 1]
   }
 
   pop (): V | undefined {
