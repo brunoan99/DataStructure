@@ -7,38 +7,32 @@ const makeSut = (): Stack<unknown> => {
 describe('Stack', () => {
   test('Should method push have no return', () => {    
     const sut = makeSut()
-    const returned = sut.push('any_value')
-    expect(returned).toBe(undefined)
+    expect(sut.push('any_value')).toBe(undefined)
   })
 
   test('Should method peek return undefined if no value are provided to Stack', () => {    
     const sut = makeSut()
-    const returned = sut.peek()
-    expect(returned).toBe(undefined)
+    expect(sut.peek()).toBe(undefined)
   })
 
   test('Should method pop return undefined if no value are provided to Stack', () => {    
     const sut = makeSut()
-    const returned = sut.pop()
-    expect(returned).toBe(undefined)
+    expect(sut.pop()).toBe(undefined)
   })
 
   test('Should method size return zero if no value are provided to Stack', () => {    
     const sut = makeSut()
-    const returned = sut.size()
-    expect(returned).toBe(0)
+    expect(sut.size()).toBe(0)
   })
 
   test('Should method storeage return an empty list if no value are provided to Stack', () => {    
     const sut = makeSut()
-    const returned = sut.storage()
-    expect(returned).toEqual([])
+    expect(sut.storage()).toEqual([])
   })
 
-  test('Should method peek return the last value provided in method push', () => {    
+  test('Should method peek return the last value provided in push method', () => {    
     const sut = makeSut()
     sut.push('any')
-    const returned = sut.peek()
-    expect(returned).toBe('any')
+    expect(sut.peek()).toBe('any')
   })
 })
