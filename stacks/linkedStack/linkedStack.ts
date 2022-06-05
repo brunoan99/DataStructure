@@ -17,7 +17,7 @@ export class LinkedStack<V> implements IStack<V> {
   }
 
   pop (): V | undefined {
-    throw new Error('Method not implemented.')
+    return this.head?.value
   }
 
   size (): number {
