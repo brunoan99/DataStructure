@@ -1,8 +1,6 @@
 import { Stack } from './Stack'
 
-const makeSut = (): Stack<unknown> => {
-  return new Stack()
-}
+const makeSut = (): Stack<unknown> => new Stack()
 
 describe('Stack', () => {
   test('Should method push have no return', () => {    
