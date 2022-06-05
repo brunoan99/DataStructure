@@ -21,7 +21,7 @@ export class LinkedStack<V> implements IStack<V> {
   }
 
   size (): number {
-    throw new Error('Method not implemented.')
+    return 0
   }
 
   storage (): V[] {
