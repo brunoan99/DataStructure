@@ -39,4 +39,10 @@ describe('Stack', () => {
     sut.push('other')
     expect(sut.peek()).toBe('other')
   })
+
+  test('Should method pop return the last value provided in push method', () => {    
+    const sut = makeSut()
+    sut.push('any')
+    expect(sut.pop()).toBe('any')
+  })
 })
