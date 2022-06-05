@@ -1,4 +1,4 @@
-import { IStack } from './IStack'
+import { IStack } from '../IStack'
 
 export class Stack<V> implements IStack<V> {
   private stack: V[]
