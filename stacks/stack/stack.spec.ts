@@ -56,4 +56,12 @@ describe('Stack', () => {
     sut.push('any')
     expect(sut.size()).not.toBe(0)
   })
+
+  test('Should method size return the exact amout of values provided in push method', () => {    
+    const sut = makeSut()
+    for (let count = 0; count < 10; count ++) {
+      expect(sut.size()).toBe(count)
+      sut.push(`any_${count}`)
+    }
+  })
 })
