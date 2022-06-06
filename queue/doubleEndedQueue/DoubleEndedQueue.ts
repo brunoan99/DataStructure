@@ -14,6 +14,12 @@ export class DoubleEndedQueue<V> extends Queue<V> implements IDoubleEndedQueue<V
   }
   
   searchBack (value: V): number {
-    return -1
+    let index
+    for (index = this.queue.length -1; index >= 0; index--) {
+      if (this.queue[index] === value) {
+        return index
+      }
+    }
+    return index
   }
 }
