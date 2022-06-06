@@ -1,11 +1,7 @@
 import { IStack } from '../IStack'
 
 export class Stack<V> implements IStack<V> {
-  private stack: V[]
-
-  constructor () {
-    this.stack = []
-  }
+  private stack: V[] = []
 
   push (value: V): void {
     this.stack.push(value)
