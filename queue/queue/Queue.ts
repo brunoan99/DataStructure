@@ -7,10 +7,12 @@ export class Queue<V> implements IQueue<V> {
     this.queue = []
   }
   enqueue (value: V): void {
-    return
+    this.queue.push(value)
   }
   dequeue (): V | undefined {
-    return this.queue[0]
+    const dequeuedItem = this.queue[0]
+    this.queue = this.queue.slice(1)
+    return dequeuedItem
   }
   peek (): V | undefined {
     return this.queue[0]
