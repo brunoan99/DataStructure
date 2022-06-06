@@ -4,4 +4,5 @@ export interface IQueue<V> {
   peek(): V | undefined
   size(): number
   storage(): V[]
+  search(value: V): number
 }

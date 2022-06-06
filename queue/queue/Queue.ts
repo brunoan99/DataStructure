@@ -18,4 +18,7 @@ export class Queue<V> implements IQueue<V> {
   storage (): V[] {
     return this.queue
   }
+  search (value: V): number {
+    return -1
+  }
 }
