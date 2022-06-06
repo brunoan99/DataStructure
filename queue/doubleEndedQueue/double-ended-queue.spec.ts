@@ -17,4 +17,16 @@ describe('Double Ended Queue', () => {
     const sut = makeSut()
     expect(sut.searchBack('any')).toBe(-1)
   })
+
+  test('Should dequeueBack return a value if it was provided to DoubleEndedQueue, in FIFO order', () => {
+    const listToEnqueue = ['any', 'other', 'another', 'another_one', 'other_one']
+    const sut = makeSut()
+    for (const item of listToEnqueue) {
+      sut.enqueue(item)
+    }
+    for (const itemToDequeue of listToEnqueue.reverse()) {
+      expect(sut.dequeueBack()).toBe(itemToDequeue)
+    }
+    expect(sut.dequeueBack()).toBe(undefined)
+  })
 })
