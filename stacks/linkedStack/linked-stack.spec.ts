@@ -27,4 +27,14 @@ describe('Linked Stack', () => {
     const sut = makeSut()
     expect(sut.storage()).toEqual([])
   })
+
+  test('Should method peek return the last value provided in push method', () => {    
+    const sut = makeSut()
+    sut.push('any')
+    expect(sut.peek()).toBe('any')
+    sut.push('other')
+    expect(sut.peek()).toBe('other')
+    sut.push('another')
+    expect(sut.peek()).toBe('another')
+  })
 })
