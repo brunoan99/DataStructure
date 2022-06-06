@@ -33,6 +33,12 @@ export class LinkedStack<V> implements IStack<V> {
   }
 
   storage (): V[] {
-    return []
+    let tempStackNode = this.head
+    const storageList = []
+    while (tempStackNode !== null) {
+      storageList.push(tempStackNode.value)
+      tempStackNode = tempStackNode.next
+    }
+    return storageList.reverse()
   }
 }
