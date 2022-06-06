@@ -16,7 +16,7 @@ export class Queue<V> implements IQueue<V> {
     return this.queue[0]
   }
   size (): number {
-    throw new Error('Method not implemented.')
+    return 0
   }
   storage (): V[] {
     throw new Error('Method not implemented.')
