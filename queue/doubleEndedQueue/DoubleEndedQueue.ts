@@ -10,7 +10,7 @@ export class DoubleEndedQueue<V> extends Queue<V> implements IDoubleEndedQueue<V
   }
   
   dequeueBack (): V | undefined {
-    return
+    return this.queue.pop()
   }
   
   searchBack (value: V): number {
