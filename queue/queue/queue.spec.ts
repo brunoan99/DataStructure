@@ -1,18 +1,20 @@
 import { Queue } from './Queue'
 
+const makeSut = (): Queue<unknown> => new Queue()
+
 describe('Queue', () => {
   test('Should method enqueue have no return', () => {
-    const sut = new Queue()
+    const sut = makeSut()
     expect(sut.enqueue('any')).toBe(undefined)
   })
 
   test('Should method dequeue have no return if no value was provided to enqueue method', () => {
-    const sut = new Queue()
+    const sut = makeSut()
     expect(sut.dequeue()).toBe(undefined)
   })
 
   test('Should method peek have no return if no value was provided to enqueue method', () => {
-    const sut = new Queue()
+    const sut = makeSut()
     expect(sut.peek()).toBe(undefined)
   })
 })
