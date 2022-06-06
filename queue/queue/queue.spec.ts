@@ -39,4 +39,12 @@ describe('Queue', () => {
     }
     expect(sut.dequeue()).toBe(undefined)
   })
+
+  test('Should method size return the exact amount if values was provided to enqueue method', () => {
+    const sut = makeSut()
+    for (let count = 0; count < 10; count++) {
+      expect(sut.size()).toBe(count)
+      sut.enqueue(`any_${count}`)
+    }
+  })
 })
