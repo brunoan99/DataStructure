@@ -56,4 +56,9 @@ describe('Queue', () => {
     }
     expect(sut.storage()).toEqual(listToEnqueue)
   })
+
+  test('Should method search return -1 if the value search are not in Queue', () => {
+    const sut = makeSut()
+    expect(sut.search('any')).toBe(-1)
+  })
 })
