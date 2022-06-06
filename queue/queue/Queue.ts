@@ -1,11 +1,16 @@
 import { IQueue } from '../IQueue'
 
 export class Queue<V> implements IQueue<V> {
+  queue: V[]
+
+  constructor () {
+    this.queue = []
+  }
   enqueue (value: V): void {
     return
   }
   dequeue (): V | undefined {
-    throw new Error('Method not implemented.')
+    return this.queue[0]
   }
   peek (): V | undefined {
     throw new Error('Method not implemented.')
