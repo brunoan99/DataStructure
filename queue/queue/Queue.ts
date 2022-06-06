@@ -7,9 +7,7 @@ export class Queue<V> implements IQueue<V> {
     this.queue.push(value)
   }
   dequeue (): V | undefined {
-    const dequeuedItem = this.queue[0]
-    this.queue = this.queue.slice(1)
-    return dequeuedItem
+    return this.queue.shift()
   }
   peek (): V | undefined {
     return this.queue[0]
