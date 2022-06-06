@@ -17,4 +17,9 @@ describe('Queue', () => {
     const sut = makeSut()
     expect(sut.peek()).toBe(undefined)
   })
+
+  test('Should method size return 0 if no value was provided to enqueue method', () => {
+    const sut = makeSut()
+    expect(sut.size()).toBe(0)
+  })
 })
