@@ -23,8 +23,20 @@ describe('Queue', () => {
     expect(sut.size()).toBe(0)
   })
 
-  test('Should method sotrage return a empty list if no value was provided to enqueue method', () => {
+  test('Should method storage return a empty list if no value was provided to enqueue method', () => {
     const sut = makeSut()
     expect(sut.storage()).toEqual([])
+  })
+
+  test('Should method dequeue return a value if value was provided to enqueue method', () => {
+    const listToEnqueue = ['any', 'other', 'another', 'another_one', 'other_one']
+    const sut = makeSut()
+    for (const item of listToEnqueue) {
+      sut.enqueue(item)
+    }
+    for (const dequeuedItem of listToEnqueue) {
+      expect(sut.dequeue()).toBe(dequeuedItem)
+    }
+    expect(sut.dequeue()).toBe(undefined)
   })
 })
