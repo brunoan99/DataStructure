@@ -12,4 +12,9 @@ describe('Double Ended Queue', () => {
     const sut = makeSut()
     expect(sut.dequeueBack()).toBe(undefined)
   })
+
+  test('Should searchBack return -1 if value was not found at DoubleEndedQueue', () => {
+    const sut = makeSut()
+    expect(sut.searchBack('any')).toBe(-1)
+  })
 })
