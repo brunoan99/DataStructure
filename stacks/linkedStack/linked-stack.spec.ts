@@ -37,11 +37,17 @@ describe('Linked Stack', () => {
     sut.push('another')
     expect(sut.peek()).toBe('another')
   })
-
-  test('Should method pop remove the last value provided in push method', () => {
+  
+  test('Should method pop remove the head of linkedStack', () => {
     const sut = makeSut()
     sut.push('any')
     expect(sut.pop()).toBe('any')
+    expect(sut.peek()).toBe(undefined)
+    sut.push('other')
+    sut.push('another')
+    expect(sut.pop()).toBe('another')
+    expect(sut.peek()).toBe('other')
+    expect(sut.pop()).toBe('other')
     expect(sut.peek()).toBe(undefined)
   })
 })
