@@ -38,4 +38,17 @@ describe('Double Ended Queue', () => {
       expect(sut.peek()).toBe(item)
     }
   })
+
+  test('Should searchBack return position of element in DoubleEndedQueue', () => {
+    const listToEnqueue = ['any', 'other', 'another', 'another_one', 'other_one']
+    const sut = makeSut()
+    for (const item of listToEnqueue) {
+      sut.enqueue(item)
+    }
+    let count = 0
+    for (const itemToSearch of listToEnqueue ) {
+      expect(sut.searchBack(itemToSearch)).toBe(count)
+      count++
+    }
+  })
 })
