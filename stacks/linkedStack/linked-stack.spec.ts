@@ -58,4 +58,13 @@ describe('Linked Stack', () => {
       sut.push(`any_${count}`)
     }
   })
+
+  test('Should method storage return a list with all values provided in push method, in same order that was pused', () => {
+    const listToPush = ['any', 'other', 'another', 'another_one', 'other_one']
+    const sut = makeSut()
+    for (const item of listToPush) {
+      sut.push(item)
+    }
+    expect(sut.storage()).toEqual(listToPush)
+  })
 })
