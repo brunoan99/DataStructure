@@ -29,4 +29,13 @@ describe('Double Ended Queue', () => {
     }
     expect(sut.dequeueBack()).toBe(undefined)
   })
+
+  test('Should enqueueFront put values in front of queue', () => {
+    const listToEnqueue = ['any', 'other', 'another', 'another_one', 'other_one']
+    const sut = makeSut()
+    for (const item of listToEnqueue) {
+      sut.enqueueFront(item)
+      expect(sut.peek()).toBe(item)
+    }
+  })
 })
