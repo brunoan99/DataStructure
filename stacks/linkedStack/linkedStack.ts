@@ -23,7 +23,13 @@ export class LinkedStack<V> implements IStack<V> {
   }
 
   size (): number {
-    return 0
+    let tempStackNode = this.head
+    let count = 0
+    while (tempStackNode !== null) {
+      count += 1
+      tempStackNode = tempStackNode.next
+    }
+    return count
   }
 
   storage (): V[] {
