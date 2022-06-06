@@ -21,7 +21,7 @@ export class Queue<V> implements IQueue<V> {
     return this.queue.length
   }
   storage (): V[] {
-    return []
+    return this.queue
   }
   
 }
