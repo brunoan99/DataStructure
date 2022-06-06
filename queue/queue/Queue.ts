@@ -1,11 +1,8 @@
 import { IQueue } from '../IQueue'
 
 export class Queue<V> implements IQueue<V> {
-  queue: V[]
+  queue: V[] = []
 
-  constructor () {
-    this.queue = []
-  }
   enqueue (value: V): void {
     this.queue.push(value)
   }
@@ -23,5 +20,4 @@ export class Queue<V> implements IQueue<V> {
   storage (): V[] {
     return this.queue
   }
-  
 }
