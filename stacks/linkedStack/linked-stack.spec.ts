@@ -22,4 +22,9 @@ describe('Linked Stack', () => {
     const sut = makeSut()
     expect(sut.size()).toBe(0)
   })
+
+  test('Should method storage return a empty list if no value are provided to Stack', () => {    
+    const sut = makeSut()
+    expect(sut.storage()).toEqual([])
+  })
 })
