@@ -22,4 +22,9 @@ describe('Queue', () => {
     const sut = makeSut()
     expect(sut.size()).toBe(0)
   })
+
+  test('Should method sotrage return a empty list if no value was provided to enqueue method', () => {
+    const sut = makeSut()
+    expect(sut.storage()).toEqual([])
+  })
 })
