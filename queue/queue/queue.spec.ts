@@ -62,7 +62,7 @@ describe('Queue', () => {
     expect(sut.search('any')).toBe(-1)
   })
 
-  test('Should search return position of element, that was provided to method enqueue, in Queue', () => {
+  test('Should search return position of element that was provided to method enqueue', () => {
     const listToEnqueue = ['any', 'other', 'another', 'another_one', 'other_one']
     const sut = makeSut()
     for (const item of listToEnqueue) {
