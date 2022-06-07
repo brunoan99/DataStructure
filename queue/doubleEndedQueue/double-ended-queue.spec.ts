@@ -51,4 +51,9 @@ describe('Double Ended Queue', () => {
       count++
     }
   })
+
+  test('Should peekBack have no return if no value was provided to enqueue or enqueueFront method', () => {
+    const sut = makeSut()
+    expect(sut.peekBack()).toBe(undefined)
+  })
 })
