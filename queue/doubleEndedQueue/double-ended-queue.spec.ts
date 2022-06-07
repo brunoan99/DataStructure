@@ -56,4 +56,12 @@ describe('Double Ended Queue', () => {
     const sut = makeSut()
     expect(sut.peekBack()).toBe(undefined)
   })
+
+  test('Should peekBack return a value if it was provided to enqueue or enqueueFront method', () => {
+    const sut = makeSut()
+    sut.enqueue('any')
+    expect(sut.peekBack()).toBe('any')
+    sut.enqueueFront('other')
+    expect(sut.peekBack()).toBe('any')
+  })
 })
