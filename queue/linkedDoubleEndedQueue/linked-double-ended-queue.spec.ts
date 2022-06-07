@@ -122,4 +122,17 @@ describe('Linked Double Ended Queue', () => {
       count++
     }
   })
+
+  test('Should searchBack return position of element that was provided to method enqueue', () => {
+    const listToEnqueue = ['any', 'other', 'another', 'another_one', 'other_one']
+    const sut = makeSut()
+    for (const item of listToEnqueue) {
+      sut.enqueue(item)
+    }
+    let count = 0
+    for (const itemToSearch of listToEnqueue ) {
+      expect(sut.searchBack(itemToSearch)).toBe(count)
+      count++
+    }
+  })
 })
