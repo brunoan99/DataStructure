@@ -47,4 +47,10 @@ describe('Linked Double Ended Queue', () => {
     const sut = makeSut()
     expect(sut.searchBack('any')).toBe(-1)
   })
+
+  test('Should dequeue return a value if it was provided to enqueue method', () => {
+    const sut = makeSut()
+    sut.enqueue('any')
+    expect(sut.dequeue()).toBe('any')
+  })
 })
