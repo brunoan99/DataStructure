@@ -5,7 +5,7 @@ export class LinkedQueue<V> implements IQueue<V> {
     return
   }
   dequeue (): V | undefined {
-    throw new Error('Method not implemented.')
+    return
   }
   peek (): V | undefined {
     return
