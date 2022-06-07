@@ -44,4 +44,12 @@ describe('Linked Queue', () => {
     sut.enqueue('any')
     expect(sut.peek()).toBe('any')
   })
+
+  test('Should size return the exact amount of values provided to enqueue method', () => {
+    const sut = makeSut()
+    for (let count = 0; count < 10; count++) {
+      expect(sut.size()).toBe(count)
+      sut.enqueue(`any_${count}`)
+    }
+  })
 })
