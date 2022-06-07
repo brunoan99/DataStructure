@@ -17,7 +17,6 @@ export class LinkedQueue<V> implements IQueue<V> {
     return []
   }
   search (value: V): number {
-    throw new Error('Method not implemented.')
+    return -1
   }
-  
 }
