@@ -58,6 +58,13 @@ export class LinkedDoubleEndedQueue<V> implements IDoubleEndedQueue<V> {
     return listToReturn
   }
   search (value: V): number {
+    let tempQueueNode = this.start
+    let index = 0
+    while (tempQueueNode) {
+      if (tempQueueNode.value == value) return index      
+      tempQueueNode = tempQueueNode?.next
+      index++
+    }
     return -1
   }
   searchBack (value: V): number {
