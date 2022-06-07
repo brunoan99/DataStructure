@@ -39,6 +39,18 @@ describe('Linked Queue', () => {
     expect(sut.dequeue()).toBe('any')
   })
 
+  test('Should method dequeue return a value if value was provided to enqueue method', () => {
+    const listToEnqueue = ['any', 'other', 'another', 'another_one', 'other_one']
+    const sut = makeSut()
+    for (const item of listToEnqueue) {
+      sut.enqueue(item)
+    }
+    for (const dequeuedItem of listToEnqueue) {
+      expect(sut.dequeue()).toBe(dequeuedItem)
+    }
+    expect(sut.dequeue()).toBe(undefined)
+  })
+
   test('Should peek return a value when was provided to enqueue method', () => {
     const sut = makeSut()
     sut.enqueue('any')
