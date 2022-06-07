@@ -32,4 +32,9 @@ describe('Linked Double Ended Queue', () => {
     const sut = makeSut()
     expect(sut.size()).toBe(0)
   })
+
+  test('Should storage return a empty list if no value was provided to enqueue or enqueueFront', () => {
+    const sut = makeSut()
+    expect(sut.storage()).toEqual([])
+  })
 })
