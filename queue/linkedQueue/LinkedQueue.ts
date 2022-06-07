@@ -21,7 +21,7 @@ export class LinkedQueue<V> implements IQueue<V> {
     return queueNodeToDequeue
   }
   peek (): V | undefined {
-    return
+    return this.start?.value
   }
   size (): number {
     return 0
