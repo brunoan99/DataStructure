@@ -27,4 +27,9 @@ describe('Linked Queue', () => {
     const sut = makeSut()
     expect(sut.storage()).toEqual([])
   })
+
+  test('Should search return -1 if value was not found in LinkedQueue', () => {
+    const sut = makeSut()
+    expect(sut.search('any')).toBe(-1)
+  })
 })
