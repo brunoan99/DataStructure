@@ -52,4 +52,13 @@ describe('Linked Queue', () => {
       sut.enqueue(`any_${count}`)
     }
   })
+
+  test('Should method storage return the values that was provided to enqueue method', () => {
+    const listToEnqueue = ['any', 'other', 'another', 'another_one', 'other_one']
+    const sut = makeSut()
+    for (const item of listToEnqueue) {
+      sut.enqueue(item)
+    }
+    expect(sut.storage()).toEqual(listToEnqueue)
+  })
 })
