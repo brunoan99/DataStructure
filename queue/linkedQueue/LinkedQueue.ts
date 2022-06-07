@@ -24,7 +24,13 @@ export class LinkedQueue<V> implements IQueue<V> {
     return this.start?.value
   }
   size (): number {
-    return 0
+    let tempQueueNode = this.start
+    let count = 0
+    while (tempQueueNode) {
+      tempQueueNode = tempQueueNode?.next
+      count++
+    }
+    return count
   }
   storage (): V[] {
     return []
