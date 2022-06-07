@@ -19,6 +19,12 @@ export class Queue<V> implements IQueue<V> {
     return this.queue
   }
   search (value: V): number {
+    let index
+    for (index = 0; index <=this.queue.length -1; index++) {
+      if (this.queue[index] === value) {
+        return index
+      }
+    }
     return -1
   }
 }
