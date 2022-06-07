@@ -1,14 +1,26 @@
 import { IDoubleEndedQueue } from '../IDoubleEndedQueue'
+import { QueueNodeDoubleLinked } from './QueueNodeDoubleLinked'
 
 export class LinkedDoubleEndedQueue<V> implements IDoubleEndedQueue<V> {
+  start: QueueNodeDoubleLinked<V> | null = null 
+  end: QueueNodeDoubleLinked<V> | null = null
+  
   enqueue (value: V): void {
-    return
+    const newQueueNode = new QueueNodeDoubleLinked(value)
+    newQueueNode.previus = this.end
+    if (this.end) {
+      this.end.next = newQueueNode
+    }
+    if (!this.start) {
+      this.start = newQueueNode
+    }
+    this.end = newQueueNode
   }
   enqueueFront (value: V): void {
     return
   }
   dequeue (): V | undefined {
-    return
+    return this.end?.value
   }
   dequeueBack (): V | undefined {
     return
