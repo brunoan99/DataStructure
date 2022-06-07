@@ -33,7 +33,13 @@ export class LinkedQueue<V> implements IQueue<V> {
     return count
   }
   storage (): V[] {
-    return []
+    let tempQueueNode = this.start
+    const listToReturn = []
+    while (tempQueueNode) {
+      listToReturn.push(tempQueueNode.value)
+      tempQueueNode = tempQueueNode?.next
+    }
+    return listToReturn
   }
   search (value: V): number {
     return -1
