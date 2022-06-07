@@ -11,7 +11,7 @@ export class LinkedDoubleEndedQueue<V> implements IDoubleEndedQueue<V> {
     return
   }
   dequeueBack (): V | undefined {
-    throw new Error('Method not implemented.')
+    return
   }
   peek (): V | undefined {
     throw new Error('Method not implemented.')
