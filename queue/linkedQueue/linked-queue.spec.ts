@@ -61,4 +61,17 @@ describe('Linked Queue', () => {
     }
     expect(sut.storage()).toEqual(listToEnqueue)
   })
+
+  test('Should search return position of element that was provided to method enqueue', () => {
+    const listToEnqueue = ['any', 'other', 'another', 'another_one', 'other_one']
+    const sut = makeSut()
+    for (const item of listToEnqueue) {
+      sut.enqueue(item)
+    }
+    let count = 0
+    for (const itemToSearch of listToEnqueue ) {
+      expect(sut.search(itemToSearch)).toBe(count)
+      count++
+    }
+  })
 })
