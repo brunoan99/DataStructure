@@ -7,4 +7,9 @@ describe('Linked Queue', () => {
     const sut = makeSut()
     expect(sut.enqueue('any')).toBeUndefined()
   })
+
+  test('Should peek return undevined if no value was provided to enqueue method', () => {
+    const sut = makeSut()
+    expect(sut.peek()).toBeUndefined()
+  })
 })
