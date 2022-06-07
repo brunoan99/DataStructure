@@ -5,7 +5,7 @@ export class LinkedDoubleEndedQueue<V> implements IDoubleEndedQueue<V> {
     return
   }
   enqueueFront (value: V): void {
-    throw new Error('Method not implemented.')
+    return
   }
   dequeue (): V | undefined {
     throw new Error('Method not implemented.')
