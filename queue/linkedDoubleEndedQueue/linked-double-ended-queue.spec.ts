@@ -17,4 +17,9 @@ describe('Linked Double Ended Queue', () => {
     const sut = makeSut()
     expect(sut.dequeue()).toBe(undefined)
   })
+
+  test('Should dequeueBack have no return if no value was provided to enqueue or enqueueFront', () => {
+    const sut = makeSut()
+    expect(sut.dequeueBack()).toBe(undefined)
+  })
 })
