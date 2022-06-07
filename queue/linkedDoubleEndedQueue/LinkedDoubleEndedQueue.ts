@@ -34,7 +34,7 @@ export class LinkedDoubleEndedQueue<V> implements IDoubleEndedQueue<V> {
     return this.end?.value
   }
   peek (): V | undefined {
-    return
+    return this.start?.value
   }
   size (): number {
     return 0
