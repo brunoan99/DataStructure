@@ -8,7 +8,7 @@ export class LinkedQueue<V> implements IQueue<V> {
     throw new Error('Method not implemented.')
   }
   peek (): V | undefined {
-    throw new Error('Method not implemented.')
+    return
   }
   size (): number {
     throw new Error('Method not implemented.')
