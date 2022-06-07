@@ -40,7 +40,13 @@ export class LinkedDoubleEndedQueue<V> implements IDoubleEndedQueue<V> {
     return this.end?.value
   }
   size (): number {
-    return 0
+    let tempQueueNode = this.start
+    let count = 0
+    while (tempQueueNode) {
+      tempQueueNode = tempQueueNode?.next
+      count++
+    }
+    return count
   }
   storage (): V[] {
     return []
