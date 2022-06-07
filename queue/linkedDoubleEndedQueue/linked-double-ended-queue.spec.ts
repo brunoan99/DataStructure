@@ -5,6 +5,6 @@ const makeSut = (): LinkedDoubleEndedQueue<unknown> => new LinkedDoubleEndedQueu
 describe('Linked Double Ended Queue', () => {
   test('Should enqueue have no return', () => {
     const sut = makeSut()
-    // expect(sut.enqueue()).toBe(undefined)
+    expect(sut.enqueue('any')).toBe(undefined)
   })
 })
