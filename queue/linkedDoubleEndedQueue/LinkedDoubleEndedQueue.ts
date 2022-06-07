@@ -2,7 +2,7 @@ import { IDoubleEndedQueue } from '../IDoubleEndedQueue'
 
 export class LinkedDoubleEndedQueue<V> implements IDoubleEndedQueue<V> {
   enqueue (value: V): void {
-    throw new Error('Method not implemented.')
+    return
   }
   enqueueFront (value: V): void {
     throw new Error('Method not implemented.')
