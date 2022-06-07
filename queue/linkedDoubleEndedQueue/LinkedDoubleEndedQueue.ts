@@ -17,7 +17,15 @@ export class LinkedDoubleEndedQueue<V> implements IDoubleEndedQueue<V> {
     this.end = newQueueNode
   }
   enqueueFront (value: V): void {
-    return
+    const newQueueNode = new QueueNodeDoubleLinked(value)
+    newQueueNode.next = this.start
+    if (this.start) {
+      this.start.previus = newQueueNode
+    }
+    if (!this.end) {
+      this.end = newQueueNode
+    }
+    this.start = newQueueNode
   }
   dequeue (): V | undefined {
     return this.end?.value
