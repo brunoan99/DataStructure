@@ -28,6 +28,11 @@ describe('Linked Double Ended Queue', () => {
     expect(sut.peek()).toBe(undefined)
   })
 
+  test('Should peek have no return if no value was provided to enqueue or enqueueFront', () => {
+    const sut = makeSut()
+    expect(sut.peekBack()).toBe(undefined)
+  })
+
   test('Should size return 0 if no value was provided to enqueue or enqueueFront', () => {
     const sut = makeSut()
     expect(sut.size()).toBe(0)
