@@ -23,7 +23,7 @@ export class LinkedDoubleEndedQueue<V> implements IDoubleEndedQueue<V> {
     return []
   }
   search (value: V): number {
-    throw new Error('Method not implemented.')
+    return -1
   }
   searchBack (value: V): number {
     throw new Error('Method not implemented.')
