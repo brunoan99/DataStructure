@@ -24,6 +24,6 @@ export class DoubleEndedQueue<V> extends Queue<V> implements IDoubleEndedQueue<V
   }
 
   peekBack (): V | undefined {
-    return
+    return this.queue[this.queue.length -1]
   }
 }
