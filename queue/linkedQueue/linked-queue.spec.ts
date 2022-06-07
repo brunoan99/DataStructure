@@ -38,4 +38,10 @@ describe('Linked Queue', () => {
     sut.enqueue('any')
     expect(sut.dequeue()).toBe('any')
   })
+
+  test('Should peek return a value when was provided to enqueue method', () => {
+    const sut = makeSut()
+    sut.enqueue('any')
+    expect(sut.peek()).toBe('any')
+  })
 })
