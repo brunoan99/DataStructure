@@ -71,13 +71,13 @@ describe('Linked Double Ended Queue', () => {
     expect(sut.dequeueBack()).toBe('any')
   })
 
-  test('Should dequeueBack return a value if it was provided to enqueueFront method', () => {
+  test('Should dequeueBack return a value if it was provided to enqueueFront methods', () => {
     const sut = makeSut()
     sut.enqueueFront('any')
     expect(sut.dequeueBack()).toBe('any')
   })
 
-  test('Should peek return a value if it was provided to enqueue or enqueueFront method', () => {
+  test('Should peek return a value if it was provided to enqueue or enqueueFront methods', () => {
     const sut = makeSut()
     sut.enqueue('any')
     expect(sut.peek()).toBe('any')
@@ -85,11 +85,19 @@ describe('Linked Double Ended Queue', () => {
     expect(sut.peek()).toBe('other')
   })
 
-  test('Should peek return a value if it was provided to enqueue or enqueueFront method', () => {
+  test('Should peekBack return a value if it was provided to enqueue or enqueueFront methods', () => {
     const sut = makeSut()
     sut.enqueue('any')
     expect(sut.peekBack()).toBe('any')
     sut.enqueueFront('other')
     expect(sut.peekBack()).toBe('any')
+  })
+
+  test('Should size return the exact amount of values provided to enqueue method', () => {
+    const sut = makeSut()
+    for (let count = 0; count < 10; count++) {
+      expect(sut.size()).toBe(count)
+      sut.enqueue(`any_${count}`)
+    }
   })
 })
