@@ -22,4 +22,9 @@ describe('Linked Queue', () => {
     const sut = makeSut()
     expect(sut.size()).toBe(0)
   })
+
+  test('Should storage return a empty list if value was not provided', () => {
+    const sut = makeSut()
+    expect(sut.storage()).toEqual([])
+  })
 })
