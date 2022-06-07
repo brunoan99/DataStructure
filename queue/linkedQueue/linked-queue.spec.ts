@@ -32,4 +32,10 @@ describe('Linked Queue', () => {
     const sut = makeSut()
     expect(sut.search('any')).toBe(-1)
   })
+
+  test('Should dequeue return a value when was provided to enqueue method', () => {
+    const sut = makeSut()
+    sut.enqueue('any')
+    expect(sut.dequeue()).toBe('any')
+  })
 })
