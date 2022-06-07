@@ -22,4 +22,8 @@ export class DoubleEndedQueue<V> extends Queue<V> implements IDoubleEndedQueue<V
     }
     return index
   }
+
+  peekBack (): V | undefined {
+    return
+  }
 }
