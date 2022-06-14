@@ -4,6 +4,8 @@ import { SetClass } from './Set'
 const makeSut = (): SetClass<unknown> => new SetClass()
 
 describe('Set', () => {
+  const listToAdd = ['any', 'other', 'another', 'another_one', 'other_one']
+
   test('Should method add not have an return', () => {
     const sut = makeSut()
     expect(sut.add('any')).toBe(undefined)
@@ -36,7 +38,11 @@ describe('Set', () => {
 
   test('Should method remove return true if the provided value is in Set', () => {
     const sut = makeSut()
-    sut.add('any')
-    expect(sut.remove('any')).toBe(true)
+    for (const item of listToAdd) {
+      sut.add(item)
+    }
+    for (const item of listToAdd) {
+      expect(sut.remove(item)).toBe(true)
+    }
   })
 })
