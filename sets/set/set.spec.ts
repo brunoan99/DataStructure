@@ -28,4 +28,9 @@ describe('Set', () => {
     const sut = makeSut()
     expect(sut.iterate()).toEqual([])
   })
+
+  test('Should method filter return a empty list if no value was provided to Set', () => {
+    const sut = makeSut()
+    expect(sut.filter(e => e)).toEqual([])
+  })
 })

@@ -17,6 +17,6 @@ export class Set<V> implements ISet<V> {
     return []
   }
   filter (callback: object): V[] {
-    throw new Error('Method not implemented.')
+    return []
   }
 }
