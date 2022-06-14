@@ -47,4 +47,16 @@ describe('Stack', () => {
     }
     expect(sut.storage()).toEqual(listToCompare)
   })
+
+  test('Should method search return the index if searched value was provided to push method, if not return -1', () => {
+    const sut = makeSut()
+    const listToPush = ['any', 'other', 'another', 'another_one', 'other_one']
+    expect(sut.search('any')).toBe(-1)
+    let index = 0
+    for (const item of listToPush) {
+      sut.push(item)
+      expect(sut.search(item)).toBe(index)
+      index++
+    }
+  })
 })
