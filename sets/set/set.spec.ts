@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
-import { Set } from './Set'
+import { SetClass } from './Set'
 
-const makeSut = (): Set<unknown> => new Set()
+const makeSut = (): SetClass<unknown> => new SetClass()
 
 describe('Set', () => {
   test('Should method add not have an return', () => {
@@ -32,5 +32,11 @@ describe('Set', () => {
   test('Should method filter return a empty list if no value was provided to Set', () => {
     const sut = makeSut()
     expect(sut.filter(e => e)).toEqual([])
+  })
+
+  test('Should method remove return true if the provided value is in Set', () => {
+    const sut = makeSut()
+    sut.add('any')
+    expect(sut.remove('any')).toBe(true)
   })
 })
