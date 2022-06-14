@@ -40,15 +40,17 @@ describe('Linked Stack', () => {
 
   test('Should method pop remove and return the value in the head of linkedStack', () => {
     const sut = makeSut()
+    expect(sut.pop()).toBe(undefined)
     sut.push('any')
     expect(sut.pop()).toBe('any')
-    expect(sut.peek()).toBe(undefined)
+    expect(sut.pop()).toBe(undefined)
     sut.push('other')
     sut.push('another')
+    sut.push('any_other')
+    expect(sut.pop()).toBe('any_other')
     expect(sut.pop()).toBe('another')
-    expect(sut.peek()).toBe('other')
     expect(sut.pop()).toBe('other')
-    expect(sut.peek()).toBe(undefined)
+    expect(sut.pop()).toBe(undefined)
   })
 
   test('Should method size return the exact amout of values provided in push method', () => {    
