@@ -2,7 +2,7 @@ import { ISet } from '../ISet'
 
 export class Set<V> implements ISet<V> {
   add (value: V): void {
-    throw new Error('Method not implemented.')
+    return
   }
   remove (value: V): boolean {
     throw new Error('Method not implemented.')
