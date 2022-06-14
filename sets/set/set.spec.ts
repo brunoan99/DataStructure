@@ -85,4 +85,16 @@ describe('Set', () => {
     expect(sut.filter(e => e === listToAdd[0])).toEqual([listToAdd[0]])
     expect(sut.filter(e => e !== listToAdd[0])).toEqual(listToAdd.slice(1))
   })
+
+  test('Should add only one time a duplicated provided value', () => {
+    const sut = makeSut()
+    for (const item of listToAdd) {
+      sut.add(item)
+    }
+    expect(sut.size()).toBe(listToAdd.length)
+    for (const item of listToAdd) {
+      sut.add(item)
+    }
+    expect(sut.size()).toBe(listToAdd.length)
+  })
 })
