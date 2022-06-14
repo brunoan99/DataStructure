@@ -23,4 +23,9 @@ describe('Set', () => {
     const sut = makeSut()
     expect(sut.size()).toBe(0)
   })
+
+  test('Should method iterate return a empty list if no value was provided to Set', () => {
+    const sut = makeSut()
+    expect(sut.iterate()).toEqual([])
+  })
 })
