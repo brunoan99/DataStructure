@@ -61,7 +61,7 @@ describe('Set Operations', () => {
     expect(sut.subset(S, T)).toBe(true)
   })
 
-  test('Should subset returns true when S is a subset of T', () => {
+  test('Should subset returns false when S is not a subset of T, but S is partialy contained in T', () => {
     const { sut, S, T } = makeSut([4, 5, 6], [1, 2, 3, 4, 5])
     expect(sut.subset(S, T)).toBe(false)
   })
