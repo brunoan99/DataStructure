@@ -5,7 +5,9 @@ export class LinkedStack<V> implements IStack<V> {
   head: StackNode<V> | null = null
 
   push (value: V): void {
-    this.head = new StackNode(value, this.head)
+    const newNode = new StackNode(value)
+    newNode.next = this.head
+    this.head = newNode
   }
 
   peek (): V | undefined {
@@ -14,7 +16,13 @@ export class LinkedStack<V> implements IStack<V> {
 
   pop (): V | undefined {
     const valueToPop = this.head?.value
-    this.head = this.head?.next ? new StackNode(this.head.next.value, this.head.next.next) : null
+    if (this.head?.next) {
+      const newNode = new StackNode(this.head.next.value)
+      newNode.next = this.head.next.next
+      this.head = newNode
+      return valueToPop
+    }
+    this.head = null
     return valueToPop
   }
 
