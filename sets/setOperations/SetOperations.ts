@@ -12,7 +12,15 @@ export class SetOperations implements ISetOperations {
     return setToReturn
   }
   intersection (S: ISet<any>, T: ISet<any>): ISet<any> {
-    throw new Error('Method not implemented.')
+    const setToReturn = new SetClass()
+    for (const itemS of S.iterate()) {
+      for (const itemT of T.iterate()) {
+        if (itemS === itemT) {
+          setToReturn.add(itemS)
+        }
+      }
+    }
+    return setToReturn
   }
   difference (S: ISet<any>, T: ISet<any>): ISet<any> {
     throw new Error('Method not implemented.')
