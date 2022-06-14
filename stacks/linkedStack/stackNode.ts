@@ -4,8 +4,8 @@ export class StackNode<V> implements IStackNode<V> {
   value: V
   next: IStackNode<V> | null
 
-  constructor (value: V, next?: StackNode<V> | null) {
+  constructor (value: V) {
     this.value = value
-    this.next = next === undefined ? null : next
+    this.next = null
   }
 }
