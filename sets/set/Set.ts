@@ -8,7 +8,7 @@ export class Set<V> implements ISet<V> {
     return false
   }
   is_element_of (value: V): boolean {
-    throw new Error('Method not implemented.')
+    return false
   }
   size (): number {
     throw new Error('Method not implemented.')

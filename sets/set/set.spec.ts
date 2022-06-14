@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { Set } from './Set'
 
 const makeSut = (): Set<unknown> => new Set()
@@ -8,9 +9,13 @@ describe('Set', () => {
     expect(sut.add('any')).toBe(undefined)
   })
 
-  // eslint-disable-next-line quotes
   test("Should method remove return false if the provided value isn't in Set", () => {
     const sut = makeSut()
     expect(sut.remove('any')).toBe(false)
+  })
+
+  test("Should method is_element_of return false if the provided value isn't in Set", () => {
+    const sut = makeSut()
+    expect(sut.is_element_of('any')).toBe(false)  
   })
 })
