@@ -30,8 +30,13 @@ describe('Set Operations', () => {
     expect(sut.union(S, T).iterate()).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
   })
 
-  test('Should union returns the union of sets S and T event both are not the same type', () => {
+  test('Should union returns the union of sets S and T even both are not the same type', () => {
     const { sut, S, T } = makeSut([1, 2, 3, 4, 5], ['a', 'b', 'c', 'd', 'e'])
     expect(sut.union(S, T).iterate()).toEqual([1, 2, 3, 4, 5, 'a', 'b', 'c', 'd', 'e'])
+  })
+
+  test('Should union returns the union of sets S and T but not duplicate elements there are in both Sets', () => {
+    const { sut, S, T } = makeSut([1, 2, 3, 4, 5], [3, 4, 5, 6, 7])
+    expect(sut.union(S, T).iterate()).toEqual([1, 2, 3, 4, 5, 6, 7])
   })
 })
