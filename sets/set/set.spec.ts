@@ -58,7 +58,7 @@ describe('Set', () => {
     }
   })
 
-  test('Should method size return the exact amoutn of values provided to Set', () => {
+  test('Should method size return the exact amount of values provided to Set', () => {
     const sut = makeSut()
     let count = 0
     for (const item of listToAdd) {
@@ -66,5 +66,13 @@ describe('Set', () => {
       sut.add(item)
       count++
     }
+  })
+
+  test('Should method iterate return a list with values provided to Set', () => {
+    const sut = makeSut()
+    for (const item of listToAdd) {
+      sut.add(item)
+    }
+    expect(sut.iterate()).toEqual(listToAdd)
   })
 })

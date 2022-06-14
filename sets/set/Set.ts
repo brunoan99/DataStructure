@@ -16,7 +16,9 @@ export class SetClass<V> implements ISet<V> {
     return this.set.size
   }
   iterate (): V[] {
-    return []
+    const listToReturn: V[] = []
+    this.set.forEach(e => listToReturn.push(e))
+    return listToReturn
   }
   filter (callback: object): V[] {
     return []
