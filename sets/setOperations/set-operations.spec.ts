@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { SetClass } from '../set/Set'
 import { SetOperations } from './SetOperations'
 
@@ -43,5 +44,10 @@ describe('Set Operations', () => {
   test('Should intersection returns the intersection of sets S and T', () => {
     const { sut, S, T } = makeSut([1, 2, 3, 4, 5], [3, 4, 5, 6, 7])
     expect(sut.intersection(S, T).iterate()).toEqual([3, 4, 5])
+  })
+
+  test('Should difference returns the difference of sets S and T', () => {
+    const { sut, S, T } = makeSut([1, 2, 3, 4, 5], [3, 4, 5, 6, 7])
+    expect(sut.difference(S, T).iterate()).toEqual([1, 2, 6, 7])
   })
 })

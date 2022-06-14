@@ -17,7 +17,14 @@ export class SetOperations implements ISetOperations {
     return setToReturn
   }
   difference (S: ISet<any>, T: ISet<any>): ISet<any> {
-    throw new Error('Method not implemented')
+    const setToReturn = new SetClass()
+    S.iterate().map(e => {
+      if(!T.is_element_of(e)) setToReturn.add(e)
+    })
+    T.iterate().map(e => {
+      if(!S.is_element_of(e)) setToReturn.add(e)
+    })
+    return setToReturn
   }
   subset (S: ISet<any>, T: ISet<any>): ISet<any> {
     throw new Error('Method not implemented.')
