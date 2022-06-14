@@ -18,4 +18,9 @@ describe('Set', () => {
     const sut = makeSut()
     expect(sut.is_element_of('any')).toBe(false)  
   })
+
+  test('Should method size return 0 if no value was provided to Set', () => {
+    const sut = makeSut()
+    expect(sut.size()).toBe(0)
+  })
 })

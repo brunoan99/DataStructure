@@ -11,7 +11,7 @@ export class Set<V> implements ISet<V> {
     return false
   }
   size (): number {
-    throw new Error('Method not implemented.')
+    return 0
   }
   iterate (): V[] {
     throw new Error('Method not implemented.')
