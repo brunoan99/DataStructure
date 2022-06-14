@@ -14,10 +14,8 @@ export class SetOperations implements ISetOperations {
   intersection (S: ISet<any>, T: ISet<any>): ISet<any> {
     const setToReturn = new SetClass()
     for (const itemS of S.iterate()) {
-      for (const itemT of T.iterate()) {
-        if (itemS === itemT) {
-          setToReturn.add(itemS)
-        }
+      if (T.is_element_of(itemS)) {
+        setToReturn.add(itemS)
       }
     }
     return setToReturn
