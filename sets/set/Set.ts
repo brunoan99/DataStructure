@@ -5,7 +5,7 @@ export class Set<V> implements ISet<V> {
     return
   }
   remove (value: V): boolean {
-    throw new Error('Method not implemented.')
+    return false
   }
   is_element_of (value: V): boolean {
     throw new Error('Method not implemented.')
