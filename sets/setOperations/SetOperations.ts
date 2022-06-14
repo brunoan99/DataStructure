@@ -18,11 +18,8 @@ export class SetOperations implements ISetOperations {
   }
   difference (S: ISet<any>, T: ISet<any>): ISet<any> {
     const setToReturn = new SetClass()
-    S.iterate().map(e => {
-      if(!T.is_element_of(e)) setToReturn.add(e)
-    })
-    T.iterate().map(e => {
-      if(!S.is_element_of(e)) setToReturn.add(e)
+    S.iterate().concat(T.iterate()).map(e => {
+      if(S.is_element_of(e) !== T.is_element_of(e)) setToReturn.add(e)
     })
     return setToReturn
   }
