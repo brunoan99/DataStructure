@@ -5,7 +5,11 @@ import { SetClass } from '../set/Set'
 
 export class SetOperations implements ISetOperations {
   union (S: ISet<any>, T: ISet<any>): ISet<any> {
-    throw new Error('Method not implemented.')
+    const setToReturn = new SetClass()
+    for (const item of S.iterate().concat(T.iterate())) {
+      setToReturn.add(item)
+    } 
+    return setToReturn
   }
   intersection (S: ISet<any>, T: ISet<any>): ISet<any> {
     throw new Error('Method not implemented.')
