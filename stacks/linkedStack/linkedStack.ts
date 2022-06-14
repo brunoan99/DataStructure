@@ -2,7 +2,7 @@ import { IStack } from '../IStack'
 import { StackNode } from './stackNode'
 
 export class LinkedStack<V> implements IStack<V> {
-  head: StackNode<V> | null = null
+  protected head: StackNode<V> | null = null
 
   push (value: V): void {
     const newNode = new StackNode(value)
