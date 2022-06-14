@@ -60,4 +60,9 @@ describe('Set Operations', () => {
     const { sut, S, T } = makeSut([1, 2, 3], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     expect(sut.subset(S, T)).toBe(true)
   })
+
+  test('Should subset returns true when S is a subset of T', () => {
+    const { sut, S, T } = makeSut([4, 5, 6], [1, 2, 3, 4, 5])
+    expect(sut.subset(S, T)).toBe(false)
+  })
 })

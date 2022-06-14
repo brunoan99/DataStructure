@@ -24,6 +24,6 @@ export class SetOperations implements ISetOperations {
     return setToReturn
   }
   subset (S: ISet<any>, T: ISet<any>): boolean {
-    return S.iterate().map(e => T.is_element_of(e)).reduce((e, a) => e ? e : false)
+    return S.iterate().map(e => T.is_element_of(e)).reduce((e, a) => e && a ? e : false)
   }
 }
