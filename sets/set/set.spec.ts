@@ -57,4 +57,14 @@ describe('Set', () => {
       expect(sut.is_element_of(item)).toBe(true)
     }
   })
+
+  test('Should method size return the exact amoutn of values provided to Set', () => {
+    const sut = makeSut()
+    let count = 0
+    for (const item of listToAdd) {
+      expect(sut.size()).toBe(count)
+      sut.add(item)
+      count++
+    }
+  })
 })

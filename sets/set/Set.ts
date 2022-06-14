@@ -13,7 +13,7 @@ export class SetClass<V> implements ISet<V> {
     return this.set.has(value)
   }
   size (): number {
-    return 0
+    return this.set.size
   }
   iterate (): V[] {
     return []
