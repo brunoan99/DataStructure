@@ -43,6 +43,18 @@ describe('Set', () => {
     }
     for (const item of listToAdd) {
       expect(sut.remove(item)).toBe(true)
+      expect(sut.remove(item)).toBe(false)
+    }
+  })
+
+  test('Should method is_element_of return true if the provided value is in Set', () => {
+    const sut = makeSut()
+    for (const item of listToAdd) {
+      sut.add(item)
+    }
+    for (const item of listToAdd) {
+      expect(sut.is_element_of(item)).toBe(true)
+      expect(sut.is_element_of(item)).toBe(true)
     }
   })
 })

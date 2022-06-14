@@ -10,7 +10,7 @@ export class SetClass<V> implements ISet<V> {
     return this.set.delete(value)
   }
   is_element_of (value: V): boolean {
-    return false
+    return this.set.has(value)
   }
   size (): number {
     return 0
