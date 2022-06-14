@@ -23,7 +23,7 @@ export class SetOperations implements ISetOperations {
     })
     return setToReturn
   }
-  subset (S: ISet<any>, T: ISet<any>): ISet<any> {
-    throw new Error('Method not implemented.')
+  subset (S: ISet<any>, T: ISet<any>): boolean {
+    return false
   }
 }

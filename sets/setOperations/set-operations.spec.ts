@@ -50,4 +50,9 @@ describe('Set Operations', () => {
     const { sut, S, T } = makeSut([1, 2, 3, 4, 5], [3, 4, 5, 6, 7])
     expect(sut.difference(S, T).iterate()).toEqual([1, 2, 6, 7])
   })
+
+  test('Should subset returns false when S is not a subset of T', () => {
+    const { sut, S, T } = makeSut([1, 2, 3], [4, 5, 6, 7, 8, 9, 10])
+    expect(sut.subset(S, T)).toBe(false)
+  })
 })
