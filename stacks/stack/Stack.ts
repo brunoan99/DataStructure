@@ -22,4 +22,8 @@ export class Stack<V> implements IStack<V> {
   storage (): V[] {
     return this.stack
   }
+
+  search (value: V): number {
+    return this.stack.indexOf(value)
+  }
 }

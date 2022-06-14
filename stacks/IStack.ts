@@ -4,4 +4,5 @@ export interface IStack<V> {
   size(): number
   peek(): V | undefined
   storage(): V[]
+  search(value: V): number
 }
