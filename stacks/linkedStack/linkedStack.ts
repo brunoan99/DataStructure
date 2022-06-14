@@ -45,4 +45,15 @@ export class LinkedStack<V> implements IStack<V> {
     }
     return storageList.reverse()
   }
+
+  search (value: V): number {
+    let index = 0
+    let tempStackNode = this.head
+    while (tempStackNode) {
+      if (tempStackNode.value === value) return index
+      tempStackNode = tempStackNode?.next
+      index++
+    }
+    return -1
+  }
 }
