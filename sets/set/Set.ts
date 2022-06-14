@@ -17,10 +17,15 @@ export class SetClass<V> implements ISet<V> {
   }
   iterate (): V[] {
     const listToReturn: V[] = []
+    listToReturn.filter
     this.set.forEach(e => listToReturn.push(e))
     return listToReturn
   }
-  filter (callback: object): V[] {
-    return []
+  filter (predicate: (value: V, value2: V, set: Set<V>) => unknown): V[] {
+    const listToReturn: V[] = []
+    this.set.forEach((e, e2, s) => {
+      if(predicate(e, e2, s)) listToReturn.push(e)
+    })
+    return listToReturn
   }
 }

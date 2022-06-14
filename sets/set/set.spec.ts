@@ -75,4 +75,14 @@ describe('Set', () => {
     }
     expect(sut.iterate()).toEqual(listToAdd)
   })
+
+  test('Should method filter return a list with provided values and filtered by predicate parameter', () => {
+    const sut = makeSut()
+    for (const item of listToAdd) {
+      sut.add(item)
+    }
+    expect(sut.filter(e => e)).toEqual(listToAdd)
+    expect(sut.filter(e => e === listToAdd[0])).toEqual([listToAdd[0]])
+    expect(sut.filter(e => e !== listToAdd[0])).toEqual(listToAdd.slice(1))
+  })
 })
