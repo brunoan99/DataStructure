@@ -26,4 +26,11 @@ describe('Hash Table', () => {
     sut.add('any')
     expect(sut.search('any')).toBe(true)
   })
+
+  test('Should remove return true if value is in HashTable', () => {
+    const sut = makeSut()
+    sut.add('any')
+    expect(sut.remove('any')).toBe(true)
+    expect(sut.remove('any')).toBe(false)
+  })
 })

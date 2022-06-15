@@ -21,6 +21,13 @@ export class HashTable<V> implements IHashTable<V> {
     this.hashTable[index].push(value)
   }
   remove (value: V): boolean {
+    const hashIndex = this.hasher.hash(value, this.capacity)
+    const bucket = this.hashTable[hashIndex]
+    const bucketIndex = bucket.indexOf(value)
+    if (bucketIndex >= 0) {
+      this.hashTable[hashIndex] = bucket.filter(e => e !== value) 
+      return true
+    }
     return false
   }
   search (value: V): boolean {
