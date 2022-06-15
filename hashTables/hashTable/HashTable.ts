@@ -5,10 +5,9 @@ export class HashTable<V> implements IHashTable<V> {
     return
   }
   remove (value: V): boolean {
-    throw new Error('Method not implemented.')
+    return false
   }
   search (value: V): boolean {
     throw new Error('Method not implemented.')
   }
-  
 }
