@@ -12,4 +12,9 @@ describe('Hash Table', () => {
     const sut = makeSut()
     expect(sut.remove('any')).toBe(false)
   })
+
+  test('Should search return false if value is not in the HashTable', () => {
+    const sut = makeSut()
+    expect(sut.search('any')).toBe(false)
+  })
 })
